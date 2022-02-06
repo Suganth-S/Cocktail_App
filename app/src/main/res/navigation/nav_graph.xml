@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchDrinksFragment">
+
+    <fragment
+        android:id="@+id/searchDrinksFragment"
+        android:name="com.suganth.cocktaildb.fragments.SearchDrinksFragment"
+        android:label="search_drinks_fragment" >
+        <action
+            android:id="@+id/action_searchDrinksFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemDetailsFragment"
+        android:name="com.suganth.cocktaildb.fragments.ItemDetailsFragment"
+        android:label="fragment_item_details"
+        tools:layout="@layout/fragment_item_details" >
+<!--        <argument-->
+<!--            android:name="strDrink"-->
+<!--            app:argType="string" />-->
+<!--        <argument-->
+<!--            android:name="strDrinkThumb"-->
+<!--            app:argType="string" />-->
+<!--        <argument-->
+<!--            android:name="strCategory"-->
+<!--            app:argType="string" />-->
+<!--        <argument-->
+<!--            android:name="strIBA"-->
+<!--            app:argType="string" />-->
+<!--        <argument-->
+<!--            android:name="strTags"-->
+<!--            app:argType="string" />-->
+<!--        <argument-->
+<!--            android:name="strInstructions"-->
+<!--            app:argType="string" />-->
+        <argument
+            android:name="drinks"
+            app:argType="com.suganth.cocktaildb.model.Drink" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedDrinksFragment"
+        android:name="com.suganth.cocktaildb.fragments.SavedDrinksFragment"
+        android:label="fragment_saved_drinks"
+        tools:layout="@layout/fragment_saved_drinks" >
+        <action
+            android:id="@+id/action_savedDrinksFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemFilterFragment"
+        android:name="com.suganth.cocktaildb.fragments.ItemFilterFragment"
+        android:label="fragment_filter_items"
+        tools:layout="@layout/fragment_filter_items" />
+</navigation>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.SearchDrinksFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#000">
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:background="@color/searchBarBg"
+        android:layout_height="wrap_content"
+        android:hint=" Search..."
+        android:padding="10dp"
+        android:textColorHint="@color/background"
+        android:textColor="@color/color_white"
+        android:maxLines="1"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawableRight="@drawable/ic_cancel"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchDrinks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:clipToPadding="true"
+        android:paddingTop="20dp"
+        android:paddingBottom="50dp"
+        app:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:listitem="@layout/drinks_item_preview" />
+
+    <include
+        android:id="@+id/itemErrorMessage"
+        layout="@layout/item_error_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</LinearLayout>
